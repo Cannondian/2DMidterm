@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Floor
+  - Ladder
+  - Breakable
+  - Door
+  - Key
+  - Enemy
   layers:
   - Default
   - TransparentFX
