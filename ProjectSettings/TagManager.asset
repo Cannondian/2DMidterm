@@ -10,6 +10,8 @@ TagManager:
   - Door
   - Key
   - Enemy
+  - DeathObstacle
+  - Pushable
   layers:
   - Default
   - TransparentFX
