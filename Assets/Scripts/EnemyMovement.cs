@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public float speed;
     public int dir;
+    public float deathVelocity = 0.1f;
 
     [Header("Grounding")]
     public bool grounded;
@@ -75,9 +76,7 @@ public class EnemyMovement : MonoBehaviour
         UpdateDir(hitLeft, hitRight, hitLeftSide, hitRightSide);
     }
 
-    //if we get SUPER done, we can have the enemies jump over obstacles,
-    //and turn only when they hit a wall
-    //but it's not necessary now
+    
     void UpdateDir(RaycastHit2D hitLeft, RaycastHit2D hitRight, RaycastHit2D hitLeftWall, RaycastHit2D hitRightWall)
     {
         if (!grounded) dir = 0;
@@ -119,4 +118,19 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+
+    //die if fallen upon by player
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            Vector3 vel = other.relativeVelocity;
+            Debug.Log(vel);
+            if (Mathf.Abs(vel.y) > deathVelocity)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 }
