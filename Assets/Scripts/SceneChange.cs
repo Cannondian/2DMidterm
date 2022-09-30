@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
-    private int nextIndex;
+    //private int nextIndex;
     private int index;
 
     // Start is called before the first frame update
     void Start()
     {
         index = SceneManager.GetActiveScene().buildIndex;
-        nextIndex = index + 1;
+        //nextIndex = index + 1;
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class SceneChange : MonoBehaviour
         if(col.gameObject.CompareTag("Door"))
         {
             Debug.Log("Entered Door");
-            SceneManager.LoadScene(nextIndex);
+            SceneManager.LoadScene(index);
         }
     }
 }

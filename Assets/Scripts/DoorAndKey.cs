@@ -37,7 +37,7 @@ public class DoorAndKey : MonoBehaviour
         if(col.gameObject.CompareTag("Door") && hasKey == true)
         {
             Debug.Log("Entered Door");
-            SceneManager.LoadScene(nextIndex);
+            SceneManager.LoadScene(index);
         }
 
         if(col.gameObject.CompareTag("Door") && hasKey == false)
