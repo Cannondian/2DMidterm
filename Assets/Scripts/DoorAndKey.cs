@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class DoorAndKey : MonoBehaviour
 {
     
-    private bool hasKey = false;
+    // private bool hasKey = false;
+    private GameObject key;
 
     private int nextIndex;
     private int index;
+
+    public float itemOffset = 1f;
 
 
     // Start is called before the first frame update
@@ -29,18 +32,23 @@ public class DoorAndKey : MonoBehaviour
     {
         if(col.gameObject.CompareTag("Key"))
         {
-            hasKey = true;
+            // hasKey = true;
             Debug.Log("Picked up key");
-            Destroy(col.gameObject);
+            key = col.gameObject;
+            key.transform.SetParent(transform);
+            key.transform.localPosition = new Vector3(itemOffset, 0, 0);
+            // Destroy(col.gameObject);
         }
 
-        if(col.gameObject.CompareTag("Door") && hasKey == true)
+        // if(col.gameObject.CompareTag("Door") && hasKey == true)
+        if (col.gameObject.CompareTag("Door") && key != null)
         {
             Debug.Log("Entered Door");
             SceneManager.LoadScene(index);
         }
 
-        if(col.gameObject.CompareTag("Door") && hasKey == false)
+        // if(col.gameObject.CompareTag("Door") && hasKey == false)
+        if (col.gameObject.CompareTag("Door") && key == null)
         {
             Debug.Log("Door is locked");
         }
