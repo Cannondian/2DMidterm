@@ -21,7 +21,7 @@ public class Death : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.CompareTag("Enemy")){
             Debug.Log("Enemy killed you");
@@ -30,6 +30,11 @@ public class Death : MonoBehaviour
 
         if(col.gameObject.CompareTag("DeathObstacle")){
             Debug.Log("Ran into deadly obstacle");
+            SceneManager.LoadScene(index);
+        }
+
+        if(col.gameObject.CompareTag("Outbound")){
+            Debug.Log("Fell out of bounds");
             SceneManager.LoadScene(index);
         }
     }

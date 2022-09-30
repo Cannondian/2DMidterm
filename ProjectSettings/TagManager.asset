@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - DeathObstacle
   - Pushable
+  - Outbound
   layers:
   - Default
   - TransparentFX

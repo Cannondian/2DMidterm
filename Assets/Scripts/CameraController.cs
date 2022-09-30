@@ -4,36 +4,39 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    public Transform target;
+    public float speed;
+    public float globalMaxX;
+    public float globalMaxY;
+    public float globalMinX;
+    public float globalMinY;
 
-    public float followSpeed;
-
-    public float xOffset = 0;
-    public float yOffset = 0;
-
-    
-
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //Camera Follow Method 1 (Without move delay)
-        //transform.position = new Vector3(target.position.x + xOffset, target.position.y + yOffset, transform.position.z);
+        Vector3 start = transform.position;
+        Vector3 goal = target.position + new Vector3(0.0f,0.0f,-10);
+        float t = Time.deltaTime * speed;
+        Vector3 newPosition = Vector3.Lerp(start, goal, t);
+        float maxX = globalMaxX - Camera.main.orthographicSize * Camera.main.aspect;
+        float maxY = globalMaxY - Camera.main.orthographicSize;
+        float minX = globalMinX + Camera.main.orthographicSize * Camera.main.aspect;
+        float minY = globalMinY + Camera.main.orthographicSize;
+        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
+        newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
+        transform.position = newPosition;
+    }
 
-        //Camera Follow Method 2 (With delay)
-        float xTarget = target.position.x + xOffset;
-        float yTarget = target.position.y + yOffset;
-
-        float xNew  = Mathf.Lerp(transform.position.x, xTarget, Time.deltaTime * followSpeed);
-        float yNew = Mathf.Lerp(transform.position.y, yTarget, Time.deltaTime * followSpeed);
-
-        transform.position = new Vector3(xNew, yNew, transform.position.z);
-
-        
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(new Vector3(globalMinX, globalMinY, 0.0f), new Vector3(globalMaxX, globalMinY, 0.0f));
+        Gizmos.DrawLine(new Vector3(globalMinX, globalMaxY, 0.0f), new Vector3(globalMaxX, globalMaxY, 0.0f));
+        Gizmos.DrawLine(new Vector3(globalMinX, globalMinY, 0.0f), new Vector3(globalMinX, globalMaxY, 0.0f));
+        Gizmos.DrawLine(new Vector3(globalMaxX, globalMinY, 0.0f), new Vector3(globalMaxX, globalMaxY, 0.0f));
     }
 }
