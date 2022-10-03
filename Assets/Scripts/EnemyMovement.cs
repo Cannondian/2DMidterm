@@ -121,18 +121,27 @@ public class EnemyMovement : MonoBehaviour
     }
 
 
-    //die if fallen upon by player
+    //commented out part: die if fallen upon by player
+    //trying to make the enemy restart the scene if it hits the player, failing miserably
     private void OnCollisionEnter2D(Collision2D other)
     {
-        PlayerController player = other.gameObject.GetComponent<PlayerController>();
-        if (player != null)
+        /*
+        // PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        Debug.Log("I, the enemy, hit " + other.gameObject.name);
+
+        if (other.gameObject.GetComponent<PlayerController>() != null)
         {
+            
             Vector3 vel = other.relativeVelocity;
             Debug.Log(vel);
             if (Mathf.Abs(vel.y) > deathVelocity)
             {
                 Destroy(gameObject);
             }
+            
+            Debug.Log("I, the enemy, hit the player!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        */
     }
 }
