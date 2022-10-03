@@ -15,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
     public float raySpread;
     public float rayLength = 0.1f;
     public float rayLengthWall = 0.2f;
+    public float rayHeightWall = 0.5f;
 
     private Rigidbody2D rb2d;
     private SpriteRenderer sr;
@@ -52,8 +53,9 @@ public class EnemyMovement : MonoBehaviour
         Vector3 raycastStartLeft = transform.position + (raySpread * Vector3.left);
         Vector3 raycastStartRight = transform.position + (raySpread * Vector3.right);
 
-        Vector3 raycastStartLeftSide = raycastStartLeft + Vector3.up;
-        Vector3 raycastStartRtSide = raycastStartRight + Vector3.up;
+        Vector3 rayHeight = new Vector3(0, rayHeightWall);
+        Vector3 raycastStartLeftSide = raycastStartLeft + rayHeight;
+        Vector3 raycastStartRtSide = raycastStartRight + rayHeight;
 
         //send raycasts
         RaycastHit2D hit = Physics2D.Raycast(raycastStart, Vector3.down, rayLength, groundMask);
@@ -92,13 +94,13 @@ public class EnemyMovement : MonoBehaviour
             dir = -1;
         }
 
-        if (hitLeftWall.collider != null)
+        if (hitLeftWall.collider != null && !hitLeftWall.collider.isTrigger)
         {
             Debug.Log("I hit" + hitLeftWall.collider);
             sr.flipX = false;
             dir = 1;
         }
-        if (hitRightWall.collider != null)
+        if (hitRightWall.collider != null && !hitRightWall.collider.isTrigger)
         {
             Debug.Log("I hit" + hitRightWall.collider);
             sr.flipX = true;
