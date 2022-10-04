@@ -14,6 +14,7 @@ TagManager:
   - Pushable
   - Outbound
   - LadderRubble
+  - BouncePad
   layers:
   - Default
   - TransparentFX
