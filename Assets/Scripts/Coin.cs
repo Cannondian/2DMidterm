@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Coin : MonoBehaviour
 {
+  
     /*
     //animation tools
     private float timer = 0;
@@ -16,6 +18,7 @@ public class Coin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         //sr = GetComponent<SpriteRenderer>();
     }
 
