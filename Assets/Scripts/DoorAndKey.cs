@@ -41,6 +41,11 @@ public class DoorAndKey : MonoBehaviour
         }
 
         // if(col.gameObject.CompareTag("Door") && hasKey == true)
+        
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
         if (col.gameObject.CompareTag("Door") && key != null)
         {
             Debug.Log("Entered Door");
