@@ -35,14 +35,5 @@ public class ItemFloating : MonoBehaviour
         
     }
 
-    void OntriggerEnter2D(Collider2D col)
-    {
-        if(col.gameObject.CompareTag("Player"))
-        {
-            playerHas = true;
-            Debug.Log("Player picked up key");
-        }
-    }
-
     
 }

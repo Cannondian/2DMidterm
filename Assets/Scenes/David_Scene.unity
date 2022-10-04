@@ -4465,11 +4465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 937252076290763599, guid: 85c84da262ada2f44ba831c7b0ab0138, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.81
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 937252076290763599, guid: 85c84da262ada2f44ba831c7b0ab0138, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.84
+      value: -6.88
       objectReference: {fileID: 0}
     - target: {fileID: 937252076290763599, guid: 85c84da262ada2f44ba831c7b0ab0138, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4563,6 +4563,22 @@ PrefabInstance:
     - target: {fileID: 7439828239937719148, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149309651057796285, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
+    - target: {fileID: 8149309651057796285, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.93869704
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149309651057796285, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.93869704
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149309651057796285, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9716981
       objectReference: {fileID: 0}
     - target: {fileID: 8149309651057796285, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
       propertyPath: m_SortingOrder
@@ -9671,7 +9687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 908061335052223697, guid: 5d2d7fe3e7ab610418ad21fe27595d08, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.04
+      value: -2.96
       objectReference: {fileID: 0}
     - target: {fileID: 908061335052223697, guid: 5d2d7fe3e7ab610418ad21fe27595d08, type: 3}
       propertyPath: m_LocalPosition.y
