@@ -21,6 +21,15 @@ public class Death : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("DeathObstacle"))
+        {
+            Debug.Log("Ran into deadly obstacle");
+            SceneManager.LoadScene(index);
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.CompareTag("Enemy")){
@@ -28,10 +37,12 @@ public class Death : MonoBehaviour
             SceneManager.LoadScene(index);
         }
 
+        /*
         if(col.gameObject.CompareTag("DeathObstacle")){
             Debug.Log("Ran into deadly obstacle");
             SceneManager.LoadScene(index);
         }
+        */
 
         if(col.gameObject.CompareTag("Outbound")){
             Debug.Log("Fell out of bounds");
