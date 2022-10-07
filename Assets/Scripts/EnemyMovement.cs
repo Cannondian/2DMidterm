@@ -27,6 +27,7 @@ public class EnemyMovement : MonoBehaviour
         rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         sr = GetComponent<SpriteRenderer>();
+        sr.flipX = true;
 
         grounded = true;
         dir = 1;
@@ -81,29 +82,45 @@ public class EnemyMovement : MonoBehaviour
     
     void UpdateDir(RaycastHit2D hitLeft, RaycastHit2D hitRight, RaycastHit2D hitLeftWall, RaycastHit2D hitRightWall)
     {
-        if (!grounded) dir = 0;
-        if (dir == 0) dir = 1; //land facing right
+        if (!grounded) dir = 1;
+        if (dir == 0) dir = 0; //land facing right
         if (hitLeft.collider == null)
         {
-            sr.flipX = false;
+            sr.flipX = true;
             dir = 1;
         }
         else if (hitRight.collider == null)
         {
-            sr.flipX = true;
+            sr.flipX = false;
             dir = -1;
         }
+
 
         if (hitLeftWall.collider != null && !hitLeftWall.collider.isTrigger)
         {
             Debug.Log("I hit" + hitLeftWall.collider);
-            sr.flipX = false;
+
+            if (hitLeftWall.collider.gameObject.GetComponent<PlayerController>() != null)
+            {
+                Debug.Log("I, the enemy, hit the player!");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+
+            sr.flipX = true;
             dir = 1;
         }
+
         if (hitRightWall.collider != null && !hitRightWall.collider.isTrigger)
         {
             Debug.Log("I hit" + hitRightWall.collider);
-            sr.flipX = true;
+
+            if (hitRightWall.collider.gameObject.GetComponent<PlayerController>() != null)
+            {
+                Debug.Log("I, the enemy, hit the player!");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+
+            sr.flipX = false;
             dir = -1;
         }
     }
@@ -120,28 +137,18 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-
-    //commented out part: die if fallen upon by player
+    /*
     //trying to make the enemy restart the scene if it hits the player, failing miserably
     private void OnCollisionEnter2D(Collision2D other)
     {
-        /*
         // PlayerController player = other.gameObject.GetComponent<PlayerController>();
-        Debug.Log("I, the enemy, hit " + other.gameObject.name);
+        // Debug.Log("I, the enemy, hit " + other.gameObject.name);
 
         if (other.gameObject.GetComponent<PlayerController>() != null)
         {
-            
-            Vector3 vel = other.relativeVelocity;
-            Debug.Log(vel);
-            if (Mathf.Abs(vel.y) > deathVelocity)
-            {
-                Destroy(gameObject);
-            }
-            
             Debug.Log("I, the enemy, hit the player!");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        */
     }
+    */
 }
