@@ -56,8 +56,11 @@ public class Friend : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        Debug.Log("Collision detected.");
+
         if(other.gameObject.CompareTag("Key"))
         {
+            Debug.Log("Found my friend.");
             Destroy(other.gameObject);
             sr.sprite = sprites[1];
             hasFriend = true;
