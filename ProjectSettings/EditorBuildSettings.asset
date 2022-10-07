@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Adi_Scene_3 1.unity
     guid: dc263857aa283d747be3e3d3d04af84c
   - enabled: 1
+    path: Assets/Scenes/Adi_spike_level.unity
+    guid: 458977c6f7accdc49a7e241751a0d30d
+  - enabled: 1
     path: Assets/Scenes/Adi_Scene_2.unity
     guid: fe49f63fa6bb2d345a5610b4c8f30d8d
   - enabled: 1

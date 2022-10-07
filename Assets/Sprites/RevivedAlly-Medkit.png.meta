@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8bccec43774c24f2eb37e9acb40fad6e
+guid: 7a365dae5a2e3410183a206ea5a64ef4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BoxSprite
+      name: MedkitSprite
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 96
-        height: 96
+        x: 120
+        y: 24
+        width: 90
+        height: 84
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1457a0c2444ac4856a2940c67aaf76fb
-      internalID: -1227058032
+      spriteID: 5d4126038f0564391997f810c5f37a43
+      internalID: 1265074920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikeSprite
+      name: RevivedAllySprite
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 96
-        height: 96
+        x: 6
+        y: 24
+        width: 108
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee5ce1855bee640478f996a19d9cf334
-      internalID: -805197927
+      spriteID: 577d897d3456e4885809ddab18a13d76
+      internalID: -719501374
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SpikeSprite: -805197927
-      BoxSprite: -1227058032
+      RevivedAllySprite: -719501374
+      MedkitSprite: 1265074920
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
