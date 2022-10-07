@@ -14,6 +14,7 @@ TagManager:
   - LadderRubble
   - BouncePad
   - Ladder
+  - Coin
   layers:
   - Default
   - TransparentFX
