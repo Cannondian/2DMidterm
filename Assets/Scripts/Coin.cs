@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+    public AudioClip coinSound;
   
     /*
     //animation tools
@@ -42,6 +43,7 @@ public class Coin : MonoBehaviour
         // PlayerController player = other.gameObject.GetComponent<PlayerController>();
         if (other.gameObject.GetComponent<PlayerController>() != null)
         {
+            AudioSource.PlayClipAtPoint(coinSound, transform.position);
             //increase score
             CoinCollector cc = CoinCollector.GetInstance();
             cc.IncreaseScore();
