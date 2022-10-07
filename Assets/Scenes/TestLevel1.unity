@@ -4178,6 +4178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c37f84b019b964895f2e5e82e4c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasKey: 0
   itemOffset: 1
 --- !u!114 &1232540622
 MonoBehaviour:
@@ -5874,6 +5875,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 28379870617662916, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 62e17b31e54d2db4f84c372b5f99cfc1, type: 2}
     - target: {fileID: 3504025695288438738, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5892,7 +5897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7439828239937719148, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5811756
+      value: 0.8153313
       objectReference: {fileID: 0}
     - target: {fileID: 7439828239937719148, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
       propertyPath: m_LocalScale.y
@@ -5904,7 +5909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7439828239937719148, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.04
+      value: 39.2086
       objectReference: {fileID: 0}
     - target: {fileID: 7439828239937719148, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5945,7 +5950,7 @@ PrefabInstance:
     - target: {fileID: 8149309651057796285, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5955491dc8dcecb4a993d9a008cf65a7, type: 3}
+      objectReference: {fileID: 1591679061, guid: dc87422e1b4d84c3eaf67d88e8be0b85, type: 3}
     - target: {fileID: 8149309651057796285, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
       propertyPath: m_Color.b
       value: 0.977665

@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 5;
     private float moveInput;
     Rigidbody2D rb2D;
+    Animator walkingAnim;
+    private SpriteRenderer rend;
 
     //private CameraShake camShaker;
 
@@ -22,14 +24,29 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        
+        walkingAnim = gameObject.GetComponent<Animator>();
+        rend = GetComponent<SpriteRenderer>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(moveInput > 0 || moveInput < 0){
+            Debug.Log("Walking");
+            walkingAnim.SetBool("Walking", true);
+        }
+        else if(moveInput == 0){
+            Debug.Log("Not Walking");
+            walkingAnim.SetBool("Walking", false);
+        }
+
+        if(Input.GetAxisRaw("Horizontal") > 0){
+            rend.flipX = false;
+        }
+        if(Input.GetAxisRaw("Horizontal") < 0){
+            rend.flipX = true;
+        }
     }
 
     private void FixedUpdate(){
