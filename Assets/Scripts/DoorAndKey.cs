@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DoorAndKey : MonoBehaviour
 {
-    
+    public AudioClip keySound;
     public bool hasKey = false;
     private GameObject key;
 
@@ -32,7 +32,9 @@ public class DoorAndKey : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.CompareTag("Key"))
+        
+
+        if (col.gameObject.CompareTag("Key"))
         {
             hasKey = true;
             Debug.Log("Picked up key");
@@ -40,6 +42,9 @@ public class DoorAndKey : MonoBehaviour
             key.transform.SetParent(transform);
             key.transform.localPosition = new Vector3(itemOffset, 0, 0);
             // Destroy(col.gameObject);
+
+            AudioSource.PlayClipAtPoint(keySound, transform.position);
+
         }
 
         // if(col.gameObject.CompareTag("Door") && hasKey == true)
