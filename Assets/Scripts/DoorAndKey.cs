@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class DoorAndKey : MonoBehaviour
 {
     public AudioClip keySound;
+    public AudioClip doorSound;
+
     public bool hasKey = false;
     private GameObject key;
 
@@ -43,7 +45,7 @@ public class DoorAndKey : MonoBehaviour
             key.transform.localPosition = new Vector3(itemOffset, 0, 0);
             // Destroy(col.gameObject);
 
-            AudioSource.PlayClipAtPoint(keySound, transform.position);
+            
 
         }
 
@@ -64,6 +66,9 @@ public class DoorAndKey : MonoBehaviour
         {
             Debug.Log("Door is locked");
         }
+
+        AudioSource.PlayClipAtPoint(keySound, transform.position);
+        AudioSource.PlayClipAtPoint(doorSound, transform.position);
     }
 
 }
