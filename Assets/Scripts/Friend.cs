@@ -83,7 +83,7 @@ public class Friend : MonoBehaviour
     {
         if (other.gameObject.name == "signpost6")
         {
-            textbox.text = "     This way to \nUnderground City\n     Hospital.";
+            textbox.text = "This way to Underground City Hospital.";
         }
     }
 

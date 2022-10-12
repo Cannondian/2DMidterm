@@ -24,7 +24,11 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        walkingAnim = gameObject.GetComponent<Animator>();
+        if (GetComponent<Friend>() == null)
+        {
+            walkingAnim = gameObject.GetComponent<Animator>();
+        }
+        // walkingAnim = gameObject.GetComponent<Animator>();
         rend = GetComponent<SpriteRenderer>();
 
     }
@@ -34,11 +38,19 @@ public class PlayerController : MonoBehaviour
     {
         if(moveInput > 0 || moveInput < 0){
             Debug.Log("Walking");
-            walkingAnim.SetBool("Walking", true);
+            if(GetComponent<Friend>() == null)
+            {
+                walkingAnim.SetBool("Walking", true);
+            }
+            // walkingAnim.SetBool("Walking", true);
         }
         else if(moveInput == 0){
             Debug.Log("Not Walking");
-            walkingAnim.SetBool("Walking", false);
+            if (GetComponent<Friend>() == null)
+            {
+                walkingAnim.SetBool("Walking", false);
+            }
+            // walkingAnim.SetBool("Walking", false);
         }
 
         if(Input.GetAxisRaw("Horizontal") > 0){

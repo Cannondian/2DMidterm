@@ -5231,7 +5231,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5444,6 +5444,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 644446286247458338, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
+      propertyPath: keySound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f9405fc5dbf4d643b03c360a6f10a78, type: 3}
+    - target: {fileID: 644446286247458338, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
+      propertyPath: doorSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7ca849be407ec514486366f0b3db758e, type: 3}
     - target: {fileID: 3504025695288438738, guid: 0c035beb42870e84e8a77cb0b452db3d, type: 3}
       propertyPath: m_Name
       value: Player
